@@ -9,9 +9,8 @@ import {
     Button,
     FlatList,
     TouchableOpacity,
-    Image,
+    Image, ImageBackground,
 } from 'react-native';
-import {withNavigation} from 'react-navigation';
 import firestore from '@react-native-firebase/firestore';
 import {circs} from '../utils/circuitData';
 
@@ -29,53 +28,35 @@ class MainScreen extends React.Component {
         };
     }
 
-    // async getData() {
-    // const documentSnapshot = await firestore()
-    //     .collection('Times')
-    //     .doc('Spa')
-    //     .get();
-    //     let data = documentSnapshot.data();
-    //     this.setState({rawData: documentSnapshot.data()});
-    //     Object.keys(data).map((key)=> {
-    //         // console.log(key + ' ' + data[key]);
-    //         this.setState({data: key + data[key]});
-    //     });
-    //     console.log(this.state.rawData.Stephan);
-    // };
-
     async componentDidMount() {
         const documentSnapshot = await firestore()
             .collection('Times')
             .doc('Spa')
             .get();
-        let data = documentSnapshot.data();
         this.setState({rawData: documentSnapshot.data()});
-
-        // Object.keys(data).map((key)=> {
-        //     this.setState({data: `${key} ${data[key]}`});
-        // });
-        // console.log(this.state.data);
     };
-
 
     render() {
         return (
             <SafeAreaView style={styles.mainContainer}>
                 <View>
-                    {/*{Object.keys(this.state.rawData).map((objctjed) => {*/}
-                    {/*    return (<Text style={styles.login}>{objctjed + ': ' + this.state.rawData[objctjed]}</Text>);*/}
-                    {/*})}*/}
                     <ScrollView>
                         <Text style={styles.login}>Circuits</Text>
                         <View style={styles.scrollContainer}>
-                            {/*<Button color={'red'} title="get the data" onPress={() => this.getData()} />*/}
-                            {/*<Text style={styles.login}>{this.state.rawData.Stephan}</Text>*/}
-
                             {circs.map((circuit, index) => {
                                 return (
-                                    <TouchableOpacity key={index} style={styles.button} onPress={() => this.props.navigation.navigate(circuit.link)}>
-                                        <Text>{circuit.title}</Text>
-                                        <Image style={styles.circuitImage} source={circuit.img}/>
+                                    <TouchableOpacity key={index} style={styles.button} onPress={() => this.props.navigation.navigate(circuit.link, {circuit: circuit})}>
+                                        <Image style={styles.cardImage} source={circuit.img}/>
+                                        <View style={styles.cardDescriptionWrapper}>
+                                            <View style={styles.cardDescriptionText}>
+                                                <Text style={styles.cardText}>Length:</Text>
+                                                <Text style={styles.cardTextSub}>10km</Text>
+                                                <Text style={styles.cardText}>Fastest lap:</Text>
+                                                <Text style={styles.cardTextSub}>1:19.119</Text>
+                                            </View>
+                                            {/*<Text style={styles.circuitTitle}>{circuit.title}</Text>*/}
+                                            <Image style={styles.circuitImage} source={circuit.circuitMap}/>
+                                        </View>
                                     </TouchableOpacity>
                                 );
                             })}
@@ -89,10 +70,33 @@ class MainScreen extends React.Component {
 
 const styles = StyleSheet.create({
     login: {
-            color: 'red',
-            fontWeight: 'bold',
-            fontSize: 36,
-            marginLeft: 30,
+        color: 'red',
+        fontWeight: 'bold',
+        fontSize: 36,
+        marginLeft: 30,
+    },
+    cardImage: {
+        width: '100%',
+        height: 100,
+        borderTopLeftRadius: 5,
+        borderTopRightRadius: 5,
+    },
+    cardText: {
+        padding: 5,
+        fontWeight: '500',
+        fontSize: 15,
+        color: 'red',
+    },
+    cardTextSub: {
+        color: 'gray',
+        paddingLeft: 5,
+    },
+    circuitTitle: {
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingTop: 5,
+        marginBottom: 5,
+        fontSize: 20,
     },
     mainContainer: {
         flex: 1,
@@ -101,25 +105,49 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         paddingTop: 30,
-    },
-    circuitImage: {
-        width: 80,
-        height: 50,
         marginLeft: 'auto',
         marginRight: 'auto',
+        width: '90%',
+    },
+    circuitImage: {
+        width: '80%',
+        height: '80%',
+        opacity: 0.8,
+        marginTop: 10,
+        marginLeft: 50,
         resizeMode: 'contain',
     },
     button: {
         marginLeft: 'auto',
         marginRight: 'auto',
-        borderWidth: 2,
-        borderColor: 'black',
+        // borderWidth: 2,
+        // borderColor: 'black',
         borderRadius: 10,
-        width: 150,
-        height: 100,
-        marginBottom: 10,
+        // width: 150,
+        // height: 100,
+        width: '95%',
+        height: 220,
+        marginBottom: 30,
         justifyContent: 'flex-start',
+        backgroundColor: 'white',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
+    cardDescriptionWrapper: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 10,
+    },
+    cardDescriptionText: {
+        flexDirection: 'column',
+    }
 });
 
 export default MainScreen;

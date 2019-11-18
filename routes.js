@@ -9,6 +9,7 @@ import AustraliaScreen from './src/screens/circuitPages/australia';
 import BahrainScreen from './src/screens/circuitPages/bahrain';
 import ChinaScreen from './src/screens/circuitPages/china';
 import AzerbijanScreen from './src/screens/circuitPages/azerbijan';
+import CircuitTimeScreen from './src/screens/circuitTime';
 
 const F1Nav = createStackNavigator({
     Login: {
@@ -24,6 +25,9 @@ const F1Nav = createStackNavigator({
         screen: UserPref
     },
     //circuitpages
+    CircuitTime: {
+      screen: CircuitTimeScreen
+    },
     Australia: {
         screen: AustraliaScreen
     },

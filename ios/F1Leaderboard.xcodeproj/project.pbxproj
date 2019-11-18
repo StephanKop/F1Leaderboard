@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* F1LeaderboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* F1LeaderboardTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -21,6 +20,7 @@
 		D6359852542776CA2FD57248 /* libPods-F1Leaderboard-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9935FC64A4DE8DED63C80 /* libPods-F1Leaderboard-tvOS.a */; };
 		D7812D5F77D458B07681A0E2 /* libPods-F1Leaderboard-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 647C86B431DE8902434F6287 /* libPods-F1Leaderboard-tvOSTests.a */; };
 		D94E9A1378C3FABC989319AD /* libPods-F1Leaderboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF94848B5690518293BB4A8 /* libPods-F1Leaderboard.a */; };
+		4A99C068BD094DB696071C8F /* Formula1-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2A061A071D74317B14B5EAE /* Formula1-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +69,7 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F58A38ACDC67288F10350A3C /* Pods-F1Leaderboard-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-F1Leaderboard-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-F1Leaderboard-tvOSTests/Pods-F1Leaderboard-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD88193AF584E6D4CACF7A25 /* Pods-F1LeaderboardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-F1LeaderboardTests.debug.xcconfig"; path = "Target Support Files/Pods-F1LeaderboardTests/Pods-F1LeaderboardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E2A061A071D74317B14B5EAE /* Formula1-Regular.otf */ = {isa = PBXFileReference; name = "Formula1-Regular.otf"; path = "../src/utils/fonts/Formula1-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +184,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				2DF0BD111CAED45C34D2DF1B /* Pods */,
+				463740621D204550B9F1C940 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -199,6 +201,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		463740621D204550B9F1C940 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				E2A061A071D74317B14B5EAE /* Formula1-Regular.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -347,6 +358,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				D450B96423798DAB00CEE98C /* GoogleService-Info.plist in Resources */,
+				4A99C068BD094DB696071C8F /* Formula1-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

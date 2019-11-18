@@ -8,7 +8,7 @@ class LoginScreen extends React.Component {
         title: 'Login',
         header: null
     };
-    state = { email: '', password: '', errorMessage: null }
+    state = { email: 'nee@nee.nl', password: 'NeeNee123', errorMessage: null }
     handleLogin = () => {
         const { email, password } = this.state
         firebase
@@ -20,7 +20,7 @@ class LoginScreen extends React.Component {
 
     render() {
         return (
-            <ImageBackground source={require ('../images/wallpaper2.jpg')} style={{width: '100%', height: '100%'}}>
+            <ImageBackground source={require ('../images/background.gif')} style={{width: '100%', height: '100%'}}>
             <SafeAreaView>
                 <F1header/>
                 <View style={styles.container}>
@@ -33,7 +33,7 @@ class LoginScreen extends React.Component {
                         style={styles.input}
                         autoCapitalize="none"
                         placeholder="Email"
-                        placeholderTextColor="gray"
+                        placeholderTextColor="white"
                         onChangeText={email => this.setState({ email })}
                         value={this.state.email}
                     />
@@ -42,14 +42,14 @@ class LoginScreen extends React.Component {
                         style={styles.input}
                         autoCapitalize="none"
                         placeholder="Password"
-                        placeholderTextColor="gray"
+                        placeholderTextColor="white"
                         onChangeText={password => this.setState({ password })}
                         value={this.state.password}
                     />
                     <TouchableOpacity style={styles.button}>
                         <Button color={'red'} title="Login" onPress={this.handleLogin} />
                     </TouchableOpacity>
-                        <Button color={'gray'} title="Or register here" onPress={() => this.props.navigation.navigate('Register')} />
+                        <Button color={'white'} title="Or register here" onPress={() => this.props.navigation.navigate('Register')} />
                 </View>
             </SafeAreaView>
             </ImageBackground>
@@ -59,10 +59,22 @@ class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        width: '75%',
+        width: '85%',
         marginTop: 120,
         marginLeft: 'auto',
         marginRight: 'auto',
+        backgroundColor: 'rgba(52, 52, 52, 0.5)',
+        padding: 20,
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
     login: {
         color: 'red',
@@ -80,7 +92,8 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         marginTop: 10,
         borderBottomWidth: 1,
-        color: 'black',
+        borderBottomColor: 'white',
+        color: 'white',
         fontSize: 18,
     },
     button: {
@@ -90,6 +103,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         borderWidth: 1,
         borderColor: 'red',
+        // backgroundColor: 'rgba(52, 52, 52, 0.5)',
         borderRadius: 5,
         width: 150,
     }

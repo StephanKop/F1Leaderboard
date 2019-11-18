@@ -26,11 +26,12 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     title: {
+        // fontFamily: 'Formula1-Regular',
         color: 'red',
         fontWeight: 'bold',
         fontSize: 36,
         marginTop: 19,
-        marginLeft: 20,
+        // marginLeft: 20,
     }
 });
 
