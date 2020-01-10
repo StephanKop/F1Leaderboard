@@ -5,6 +5,7 @@ import LoginScreen from "./src/screens/login";
 import RegisterScreen from "./src/screens/Register";
 import MainScreen from "./src/screens/main";
 import UserPref from './src/screens/Userpref';
+import Slider from './src/screens/slider';
 import AustraliaScreen from './src/screens/circuitPages/australia';
 import BahrainScreen from './src/screens/circuitPages/bahrain';
 import ChinaScreen from './src/screens/circuitPages/china';
@@ -23,6 +24,9 @@ const F1Nav = createStackNavigator({
     },
     UserPref: {
         screen: UserPref
+    },
+    Slider: {
+        screen: Slider
     },
     //circuitpages
     CircuitTime: {

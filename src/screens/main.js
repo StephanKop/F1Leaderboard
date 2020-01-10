@@ -29,11 +29,16 @@ class MainScreen extends React.Component {
     }
 
     async componentDidMount() {
-        const documentSnapshot = await firestore()
+        firestore()
             .collection('Times')
             .doc('Spa')
-            .get();
-        this.setState({rawData: documentSnapshot.data()});
+            .get()
+            .then((data) => {
+                this.setState({rawData: data.data()});
+                })
+            .catch((e) => {
+                console.log(e);
+            });
     };
 
     render() {
@@ -41,7 +46,7 @@ class MainScreen extends React.Component {
             <SafeAreaView style={styles.mainContainer}>
                 <View>
                     <ScrollView>
-                        <Text style={styles.login}>Circuits</Text>
+                        <Text style={styles.login} onPress={() => this.props.navigation.navigate('Slider')}>Circuits</Text>
                         <View style={styles.scrollContainer}>
                             {circs.map((circuit, index) => {
                                 return (
@@ -70,10 +75,11 @@ class MainScreen extends React.Component {
 
 const styles = StyleSheet.create({
     login: {
-        color: 'red',
+        color: 'white',
         fontWeight: 'bold',
         fontSize: 36,
         marginLeft: 30,
+        fontFamily: 'Formula1-Display-Regular',
     },
     cardImage: {
         width: '100%',
@@ -85,7 +91,7 @@ const styles = StyleSheet.create({
         padding: 5,
         fontWeight: '500',
         fontSize: 15,
-        color: 'red',
+        color: 'black',
     },
     cardTextSub: {
         color: 'gray',
@@ -99,7 +105,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     mainContainer: {
-        flex: 1,
+        flex: 0,
+        // backgroundColor: 'rgba(52, 52, 52, 0.0)',
+        backgroundColor: '#333333',
     },
     scrollContainer: {
         flexDirection: 'row',
@@ -114,7 +122,7 @@ const styles = StyleSheet.create({
         height: '80%',
         opacity: 0.8,
         marginTop: 10,
-        marginLeft: 50,
+        // marginLeft: 40,
         resizeMode: 'contain',
     },
     button: {
@@ -138,7 +146,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
 
-        elevation: 5,
+        elevation: 20,
     },
     cardDescriptionWrapper: {
         flexDirection: 'row',

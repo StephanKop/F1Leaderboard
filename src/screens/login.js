@@ -2,21 +2,28 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, ImageBackground, Image, TextInput, TouchableOpacity,} from 'react-native';
 import F1header from '../components/f1header';
 import firebase from "@react-native-firebase/app";
+import SplashScreen from 'react-native-splash-screen'
 
 class LoginScreen extends React.Component {
     static navigationOptions = {
         title: 'Login',
         header: null
     };
-    state = { email: 'nee@nee.nl', password: 'NeeNee123', errorMessage: null }
+    state = { email: 'nee@nee.nl', password: 'NeeNee123', errorMessage: null };
     handleLogin = () => {
-        const { email, password } = this.state
+        const { email, password } = this.state;
         firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
-            .then(() => this.props.navigation.navigate('Main'))
+            .then(() => this.props.navigation.navigate('Slider'))
             .catch(error => this.setState({ errorMessage: error.message }))
-    }
+    };
+
+    // componentDidMount() {
+    //     // do stuff while splash screen is shown
+    //     // After having done stuff (such as async tasks) hide the splash screen
+    //     SplashScreen.hide();
+    // }
 
     render() {
         return (
@@ -47,7 +54,7 @@ class LoginScreen extends React.Component {
                         value={this.state.password}
                     />
                     <TouchableOpacity style={styles.button}>
-                        <Button color={'red'} title="Login" onPress={this.handleLogin} />
+                        <Button color={'white'} title="Login" onPress={this.handleLogin} />
                     </TouchableOpacity>
                         <Button color={'white'} title="Or register here" onPress={() => this.props.navigation.navigate('Register')} />
                 </View>
@@ -77,9 +84,10 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     login: {
-        color: 'red',
+        color: 'white',
         fontSize: 20,
         fontWeight: 'bold',
+        fontFamily: 'Formula1-Display-Regular',
     },
     logo: {
         width: 50,
@@ -102,7 +110,7 @@ const styles = StyleSheet.create({
         marginRight: 'auto',
         marginBottom: 20,
         borderWidth: 1,
-        borderColor: 'red',
+        borderColor: 'white',
         // backgroundColor: 'rgba(52, 52, 52, 0.5)',
         borderRadius: 5,
         width: 150,

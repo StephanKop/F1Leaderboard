@@ -56,6 +56,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Formula1-Regular.otf</string>
+		<string>Formula1-Bold.otf</string>
+		<string>Formula1-Wide.otf</string>
 	</array>
 </dict>
 </plist>

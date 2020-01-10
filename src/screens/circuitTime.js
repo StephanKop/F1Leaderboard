@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, ImageBackground, Image, TextInput, TouchableOpacity, KeyboardAvoidingView,} from 'react-native';
+import {SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, ImageBackground, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Keyboard } from 'react-native';
 import firebase from "@react-native-firebase/app";
 import firestore from '@react-native-firebase/firestore';
 import moment from 'moment';
@@ -20,6 +20,7 @@ class CircuitTimeScreen extends React.Component {
         };
     }
 
+
     async componentDidMount() {
 
         const circuit = this.props.navigation.getParam('circuit');
@@ -38,7 +39,6 @@ class CircuitTimeScreen extends React.Component {
             x += Number(testTime[1]) * 1000;
             x += Number(testTime[2]);
 
-            // console.log(testTime);
             return {name: key, time: x};
         });
 
@@ -71,7 +71,7 @@ class CircuitTimeScreen extends React.Component {
                     <Text style={styles.title}>{circuit.title}</Text>
                     <ScrollView>
                         {data.map((object, index) => {
-                            return (<View style={styles.timeContainer}>
+                            return (<View key={index} style={styles.timeContainer}>
                                 <Text style={styles.name}>{index + 1 + '. '}{object.name}</Text>
                                     <Text style={styles.time}>{moment(object.time).format('mm:ss.SSS')}</Text>
                                     </View>
@@ -87,6 +87,7 @@ class CircuitTimeScreen extends React.Component {
                                 placeholderTextColor="gray"
                                 onChangeText={(newName) =>{this.setState({newName: newName})}}
                                 value={this.state.newName}
+                                clearButtonMode='always'
                             />
                             <TextInput
                                 style={styles.input}
@@ -96,11 +97,12 @@ class CircuitTimeScreen extends React.Component {
                                 textContentType="oneTimeCode"
                                 onChangeText={(newTime) =>{this.setState({newTime: newTime})}}
                                 value={this.state.newTime}
+                                clearButtonMode='always'
                             />
                         </View>
                         <View style={styles.buttonwrapper}>
-                            <TouchableOpacity style={styles.button} onPress={() => this.insertData()}>
-                                <Image style={styles.buttonImage} source={require('../images/add.png')}/>
+                            <TouchableOpacity style={styles.button} onPress={() => {this.insertData(); this.componentDidMount().documentSnapshot; Keyboard.dismiss()}}>
+                                <Image style={styles.buttonImage} source={require('../images/addbw.png')}/>
                                 {/*<Button title={'Add'} color={'red'} onPress={() => this.insertData()}/>*/}
                             </TouchableOpacity>
                         </View>
@@ -112,12 +114,13 @@ class CircuitTimeScreen extends React.Component {
 
 const styles = StyleSheet.create({
     title: {
-        color: 'red',
+        color: 'white',
         fontWeight: 'bold',
         fontSize: 36,
         width: '90%',
         marginLeft: 'auto',
         marginRight: 'auto',
+        fontFamily: 'Formula1-Display-Regular',
     },
     time: {
         fontSize: 20,
@@ -125,12 +128,14 @@ const styles = StyleSheet.create({
         paddingBottom: 15,
         paddingRight: 10,
         color: 'gray',
+        fontFamily: 'Formula1-Display-Regular',
 
     },
     inputContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginBottom: 50,
+        marginBottom: 20,
+        paddingTop: 10,
     },
     textWrapper: {
         flexDirection: 'column',
@@ -154,16 +159,19 @@ const styles = StyleSheet.create({
 
         elevation: 1,
     },
+
     name: {
         fontSize: 20,
         paddingTop: 15,
         paddingBottom: 15,
         paddingLeft: 10,
-        color: 'red',
+        color: 'black',
         fontWeight: 'bold',
+        fontFamily: 'Formula1-Display-Regular',
     },
     container: {
         flex: 1,
+        backgroundColor: '#333333',
     },
     timeContainer: {
         justifyContent: 'space-between',
@@ -193,7 +201,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         shadowOffset: {
                 width: 0,
-                height: 2,
+                height: 5,
             },
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
@@ -202,19 +210,11 @@ const styles = StyleSheet.create({
     },
 
     buttonImage: {
-        width: 30,
-        height: 30,
+        width: 20,
+        height: 20,
         marginLeft: 'auto',
         marginRight: 'auto',
         shadowColor: "#000",
-        // shadowOffset: {
-        //     width: 0,
-        //     height: 2,
-        // },
-        // shadowOpacity: 0.25,
-        // shadowRadius: 3.84,
-        //
-        // elevation: 5,
     }
 });
 

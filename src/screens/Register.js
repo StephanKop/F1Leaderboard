@@ -32,7 +32,7 @@ class RegisterScreen extends React.Component {
 
     render() {
         return (
-            <ImageBackground source={require ('../images/wallpaper2.jpg')} style={{width: '100%', height: '100%'}}>
+            <ImageBackground source={require ('../images/background.gif')} style={{width: '100%', height: '100%'}}>
             <SafeAreaView>
                 <F1header/>
                 <View style={styles.container}>

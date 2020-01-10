@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "409914734729",
+    "firebase_url": "https://f1-leaderboard.firebaseio.com",
+    "project_id": "f1-leaderboard",
+    "storage_bucket": "f1-leaderboard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409914734729:android:1538d0a2347b076c336e58",
+        "android_client_info": {
+          "package_name": "com.f1leaderboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409914734729-p2mfr6okooa610pnjhb8jkrm9rg0p4ca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-pgYJmbpKBiSVwFV--HYAeBD5wc2pCLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409914734729-p2mfr6okooa610pnjhb8jkrm9rg0p4ca.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "409914734729-vq46cfnahnmpmr9n45dohqndo2sjv2n2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.Gillz.F1Leaderboard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

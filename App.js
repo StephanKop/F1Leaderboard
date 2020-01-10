@@ -3,6 +3,8 @@ import Routes from "./routes";
 import firebase from '@react-native-firebase/app';
 import auth from '@react-native-firebase/auth';
 
+console.disableYellowBox = true;
+
 firebase.auth()
     .signInAnonymously()
     .then(credential => {

@@ -28,18 +28,18 @@ class UserPref extends React.Component {
         this.setState({ currentUser })
     }
 
-    handleSignUp = () => {
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .then(() => this.props.navigation.navigate('Main'))
-            .catch(error => this.setState({ errorMessage: error.message }))
-    };
+    // handleSignUp = () => {
+    //     firebase
+    //         .auth()
+    //         .createUserWithEmailAndPassword(this.state.email, this.state.password)
+    //         .then(() => this.props.navigation.navigate('Main'))
+    //         .catch(error => this.setState({ errorMessage: error.message }))
+    // };
 
     render() {
         const { currentUser } = this.state;
         return (
-            <ImageBackground source={require ('../images/wallpaper2.jpg')} style={{width: '100%', height: '100%'}}>
+            <ImageBackground source={require ('../images/background.gif')} style={{width: '100%', height: '100%'}}>
                 <SafeAreaView>
                     <F1header/>
                     <View style={styles.container}>
@@ -48,22 +48,22 @@ class UserPref extends React.Component {
                         <Text style={{ color: 'red' }}>
                             {this.state.errorMessage}
                         </Text>}
-                        <Text style={styles.login}>Hi, {currentUser && currentUser.email}! Fill in your user preferences below.</Text>
-                        <TextInput
-                            secureTextEntry
-                            style={styles.input}
-                            autoCapitalize="none"
-                            placeholder="username"
-                            placeholderTextColor="gray"
-                            onChangeText={password => this.setState({ password })}
-                            value={this.state.username}
-                        />
+                        <Text style={styles.login}>Hi, {currentUser && currentUser.email}! Thank you for registering!</Text>
+                        {/*<TextInput*/}
+                        {/*    secureTextEntry*/}
+                        {/*    style={styles.input}*/}
+                        {/*    autoCapitalize="none"*/}
+                        {/*    placeholder="username"*/}
+                        {/*    placeholderTextColor="gray"*/}
+                        {/*    onChangeText={password => this.setState({ password })}*/}
+                        {/*    value={this.state.username}*/}
+                        {/*/>*/}
                         <TouchableOpacity style={styles.button}>
-                            <Button color={'red'} title="Continue" onPress={this.handleSignUp} />
+                            <Button color={'red'} title="Back to login" onPress={() => this.props.navigation.navigate('Login')} />
                         </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Button color={'gray'} title="Back" onPress={() => this.props.navigation.navigate('Register')} />
-                        </TouchableOpacity>
+                        {/*<TouchableOpacity>*/}
+                        {/*    <Button color={'gray'} title="Back" onPress={() => this.props.navigation.navigate('Register')} />*/}
+                        {/*</TouchableOpacity>*/}
                     </View>
                 </SafeAreaView>
             </ImageBackground>
@@ -73,10 +73,22 @@ class UserPref extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        width: '75%',
+        width: '85%',
         marginTop: 120,
         marginLeft: 'auto',
         marginRight: 'auto',
+        backgroundColor: 'rgba(52, 52, 52, 0.5)',
+        padding: 20,
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
     login: {
         color: 'red',

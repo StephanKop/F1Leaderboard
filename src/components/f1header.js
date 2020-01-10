@@ -18,19 +18,20 @@ class F1header extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     logo: {
-        marginLeft: 10,
         width: 100,
         height: 80,
         resizeMode: 'contain',
     },
     title: {
-        // fontFamily: 'Formula1-Regular',
+        fontFamily: 'Formula1-Display-Regular',
         color: 'red',
         fontWeight: 'bold',
-        fontSize: 36,
-        marginTop: 19,
+        fontSize: 30,
+        marginTop: 25,
         // marginLeft: 20,
     }
 });

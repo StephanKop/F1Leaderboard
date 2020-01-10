@@ -35,8 +35,11 @@ target 'F1Leaderboard' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
   target 'F1LeaderboardTests' do
     inherit! :search_paths
