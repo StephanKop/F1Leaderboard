@@ -5,6 +5,7 @@ export const circs = [
         img: require('../images/backgrounds/melbourneImg.jpg'),
         circuitMap: require('../images/circuits/australia.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Australia',
     },
     {
@@ -13,6 +14,7 @@ export const circs = [
         img: require('../images/backgrounds/bahrain.jpg'),
         circuitMap: require('../images/circuits/bahrain.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Bahrain',
     },
     {
@@ -21,6 +23,7 @@ export const circs = [
         img: require('../images/backgrounds/china.jpg'),
         circuitMap: require('../images/circuits/China.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'China',
     },
     {
@@ -29,6 +32,7 @@ export const circs = [
         img: require('../images/backgrounds/azerbijan.jpg'),
         circuitMap: require('../images/circuits/azerbijan.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Azerbijan',
     },
     {
@@ -37,6 +41,7 @@ export const circs = [
         img: require('../images/backgrounds/spain.jpg'),
         circuitMap: require('../images/circuits/spain.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Spain',
     },
     {
@@ -45,6 +50,7 @@ export const circs = [
         img: require('../images/backgrounds/monaco.jpg'),
         circuitMap: require('../images/circuits/monaco.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Monaco',
     },
     {
@@ -53,6 +59,7 @@ export const circs = [
         img: require('../images/backgrounds/canada.jpg'),
         circuitMap: require('../images/circuits/canada.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Canada',
     },
     {
@@ -61,6 +68,7 @@ export const circs = [
         img: require('../images/backgrounds/france.jpg'),
         circuitMap: require('../images/circuits/france.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'France',
     },
     {
@@ -69,14 +77,16 @@ export const circs = [
         img: require('../images/backgrounds/austria.jpg'),
         circuitMap: require('../images/circuits/austria.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Austria',
     },
     {
-        title: 'Great Britain',
+        title: 'UK',
         circuitName: 'Silverstone',
         img: require('../images/backgrounds/greatbrittain.jpg'),
         circuitMap: require('../images/circuits/brit.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Great Britain',
     },
     {
@@ -85,6 +95,7 @@ export const circs = [
         img: require('../images/backgrounds/germany.jpg'),
         circuitMap: require('../images/circuits/germany.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Germany',
     },
     {
@@ -93,6 +104,7 @@ export const circs = [
         img: require('../images/backgrounds/hungary.jpg'),
         circuitMap: require('../images/circuits/hungary.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Hungary',
     },
     {
@@ -101,6 +113,7 @@ export const circs = [
         img: require('../images/backgrounds/belgium.jpg'),
         circuitMap: require('../images/circuits/belgium.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Belgium',
     },
     {
@@ -109,6 +122,7 @@ export const circs = [
         img: require('../images/backgrounds/italy.jpg'),
         circuitMap: require('../images/circuits/italy.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Italy',
     },
     {
@@ -117,6 +131,7 @@ export const circs = [
         img: require('../images/backgrounds/singapore.jpg'),
         circuitMap: require('../images/circuits/singapore.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Singapore',
     },
     {
@@ -125,6 +140,7 @@ export const circs = [
         img: require('../images/backgrounds/russia.jpeg'),
         circuitMap: require('../images/circuits/russia.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Russia',
     },
     {
@@ -133,6 +149,7 @@ export const circs = [
         img: require('../images/backgrounds/japan.jpeg'),
         circuitMap: require('../images/circuits/japan.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Japan',
     },
     {
@@ -141,14 +158,16 @@ export const circs = [
         img: require('../images/backgrounds/mexico.jpg'),
         circuitMap: require('../images/circuits/mexico.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Mexico',
     },
     {
-        title: 'United States',
+        title: 'America',
         circuitName: 'Circuit of the Americas',
         img: require('../images/backgrounds/mexico.jpeg'),
         circuitMap: require('../images/circuits/unitedstates.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'United States',
     },
     {
@@ -157,6 +176,7 @@ export const circs = [
         img: require('../images/backgrounds/brazil.jpg'),
         circuitMap: require('../images/circuits/brazil.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Brazil',
     },
     {
@@ -165,6 +185,7 @@ export const circs = [
         img: require('../images/backgrounds/abudhabi.jpg'),
         circuitMap: require('../images/circuits/abudhabi.png'),
         link: 'CircuitTime',
+        linknoline: 'CircuitTimeNoLine',
         document: 'Abu Dhabi',
     },
 ];

@@ -66,7 +66,14 @@ class Slider extends React.Component {
                                 return (
                                     <ImageBackground style={styles.cardImage} source={circuit.img} blurRadius={5}>
                                     <TouchableOpacity key={index} style={styles.button} onPress={() => this.props.navigation.navigate(circuit.link, {circuit: circuit})}>
+                                    {/*    <TouchableOpacity key={index} style={styles.button} onPress={() => this.props.navigation.navigate('WeatherSelector')}>*/}
                                         <Text style={styles.login}>{circuit.title}</Text>
+                                        <TouchableOpacity style={styles.backButton} onPress={() => this.props.navigation.goBack()}>
+                                            <Image
+                                                style={styles.backButton}
+                                                source={require('../images/back.png')}
+                                            />
+                                        </TouchableOpacity>
                                         <Text style={styles.subHeader}>{circuit.circuitName}</Text>
                                             <Image style={styles.circuitImage} source={circuit.circuitMap}/>
                                     </TouchableOpacity>
@@ -230,6 +237,13 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
         fontFamily: 'Formula1-Display-Regular',
+    },
+
+    backButton: {
+        marginTop: -25,
+        paddingLeft: 10,
+        width: 30,
+        height: 30,
     },
 });
 

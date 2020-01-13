@@ -15,7 +15,7 @@ class LoginScreen extends React.Component {
         firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
-            .then(() => this.props.navigation.navigate('Slider'))
+            .then(() => this.props.navigation.navigate('WeatherSelector'))
             .catch(error => this.setState({ errorMessage: error.message }))
     };
 
@@ -56,7 +56,7 @@ class LoginScreen extends React.Component {
                     <TouchableOpacity style={styles.button}>
                         <Button color={'white'} title="Login" onPress={this.handleLogin} />
                     </TouchableOpacity>
-                        <Button color={'white'} title="Or register here" onPress={() => this.props.navigation.navigate('Register')} />
+                        <Button color={'white'} title="Or register here" onPress={() => this.props.navigation.navigate('WeatherSelector')} />
                 </View>
             </SafeAreaView>
             </ImageBackground>

@@ -6,11 +6,10 @@ import RegisterScreen from "./src/screens/Register";
 import MainScreen from "./src/screens/main";
 import UserPref from './src/screens/Userpref';
 import Slider from './src/screens/slider';
-import AustraliaScreen from './src/screens/circuitPages/australia';
-import BahrainScreen from './src/screens/circuitPages/bahrain';
-import ChinaScreen from './src/screens/circuitPages/china';
-import AzerbijanScreen from './src/screens/circuitPages/azerbijan';
+import Nolineslider from './src/screens/nolineslider';
+import WeatherSelector from './src/screens/TypeSelection';
 import CircuitTimeScreen from './src/screens/circuitTime';
+import CircuitTimeScreenNoLine from './src/screens/circuitTimeNoLine';
 
 const F1Nav = createStackNavigator({
     Login: {
@@ -28,22 +27,20 @@ const F1Nav = createStackNavigator({
     Slider: {
         screen: Slider
     },
-    //circuitpages
+    Nolineslider: {
+        screen: Nolineslider
+    },
+    WeatherSelector: {
+        screen: WeatherSelector
+    },
+
     CircuitTime: {
-      screen: CircuitTimeScreen
+        screen: CircuitTimeScreen
     },
-    Australia: {
-        screen: AustraliaScreen
-    },
-    Bahrain: {
-        screen: BahrainScreen
-    },
-    China: {
-        screen: ChinaScreen
-    },
-    Azerbijan: {
-        screen: AzerbijanScreen
-    },
+
+    CircuitTimeNoLine: {
+        screen: CircuitTimeScreenNoLine
+    }
 
 
 

@@ -3,6 +3,7 @@ import {SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Ima
 import firebase from "@react-native-firebase/app";
 import firestore from '@react-native-firebase/firestore';
 import moment from 'moment';
+import Swiper from 'react-native-swiper';
 
 class CircuitTimeScreen extends React.Component {
     static navigationOptions = {
