@@ -58,7 +58,7 @@ class CircuitTimeScreenNoLine extends React.Component {
         const data = {};
         data[newName]= newTime;
         const documentSnapshot = await firestore()
-            .collection('Times')
+            .collection('TimesNoLine')
             .doc(circuit.document)
             .update(data);
     }

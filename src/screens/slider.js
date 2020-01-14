@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 import {circs} from '../utils/circuitData';
-import Swiper from 'react-native-swiper';
+import {Swiper} from 'react-native-swiper';
 import moment from 'moment';
 
 class Slider extends React.Component {
